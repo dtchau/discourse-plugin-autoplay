@@ -9,7 +9,7 @@ A plugin that auto-play media in the first post of a topic in Discourse.
 - As soon as that element is found, the plugin will stop observing `document`.
 - Within the `#post_1` node, the plugin will play the first media it finds using [the supported media list](#supported-media) (prioritizing in the order listed).
 
-## Supported Media <a id="supported-media"></a>
+## Supported Media
 
 - Youtube link.
 - Audio tag.
