@@ -1,0 +1,4 @@
+plugins:
+  autoplay_enabled:
+    default: true
+    client: true
