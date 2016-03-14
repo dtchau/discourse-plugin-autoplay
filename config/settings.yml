@@ -2,3 +2,6 @@ plugins:
   autoplay_enabled:
     default: true
     client: true
+  autoplay_required_trust_level:
+    default: 4
+    client: true
