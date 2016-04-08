@@ -1,0 +1,4 @@
+es:
+  js:
+    autoplay:
+      opt_in: 'Autoplay el primer video / audio del tema'
