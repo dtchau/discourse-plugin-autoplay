@@ -1,5 +1,5 @@
 en:
   js:
     autoplay:
-      opt_in: "Auto play the first media on the topic (like a Youtube video)."
-      settings_label: "Auto-Play"
+      opt_in: "Autoplay the first media on the topic (like a Youtube video)"
+      settings_label: "Autoplay"
