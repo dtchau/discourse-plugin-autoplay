@@ -1,0 +1,4 @@
+es:
+  site_settings:
+    autoplay_enabled: "Auto - jugar el primer video de Youtube en el tema ?"
+    autoplay_required_trust_level: "Auto-Play sólo está disponible para jugar con al menos este nivel de confianza."

@@ -1,10 +1,12 @@
+import Preferences from 'discourse/controllers/preferences';
 import RouteTopic from 'discourse/routes/topic';
 import {withPluginApi} from 'discourse/lib/plugin-api';
 
 function playMedia(api) {
   let user = api.getCurrentUser();
   if (user) {
-    if (user.get('trust_level') < Discourse.SiteSettings.autoplay_required_trust_level) {
+    const userEnabled = user.get('custom_fields.autoplay_first_media');
+    if (!userEnabled || user.get('trust_level') < Discourse.SiteSettings.autoplay_required_trust_level) {
       return;
     }
 
@@ -35,6 +37,12 @@ export default {
     withPluginApi('0.1', api => {
       if (Discourse.SiteSettings.autoplay_enabled) {
         RouteTopic.on('setupTopicController', playMedia.bind(null, api));
+
+        Preferences.reopen({
+          autoplayEnabled: function() {
+            return Discourse.SiteSettings.autoplay_enabled;
+          }.property()
+        });
       }
     });
   }
