@@ -1,3 +1,4 @@
+import Preferences from 'discourse/controllers/preferences';
 import RouteTopic from 'discourse/routes/topic';
 import {withPluginApi} from 'discourse/lib/plugin-api';
 
@@ -36,6 +37,12 @@ export default {
     withPluginApi('0.1', api => {
       if (Discourse.SiteSettings.autoplay_enabled) {
         RouteTopic.on('setupTopicController', playMedia.bind(null, api));
+
+        Preferences.reopen({
+          autoplayEnabled: function() {
+            return Discourse.SiteSettings.autoplay_enabled;
+          }.property()
+        });
       }
     });
   }
